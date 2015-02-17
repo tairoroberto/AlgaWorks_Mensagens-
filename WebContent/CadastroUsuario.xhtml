@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>CAdastro de usuário</title>
+</h:head>
+<h:body>
+	<h:form id="formCadastro">
+	
+		<h:messages layout="list" errorStyle="color:red" 
+			infoStyle="color:green" warnStyle="color:orange"
+			fatalStyle="color:#c0c0c0" showDetail="true" showSummary="false" globalOnly="true"/>
+		<h:panelGrid columns="2">
+			
+			<f:facet name="header">
+				cadastro de novo usuario no sistema
+			</f:facet>
+			
+			<h:outputLabel value="Nome completo" for="nome"/>
+			<h:panelGroup>
+				<h:inputText size="50" id="nome" value="#{cadastroUsuarioBean.nome}" />
+				<h:message for="nome" errorStyle="color:red" warnStyle="color:orange" infoClass="color:green"/>
+			</h:panelGroup>
+			
+			<h:outputLabel value="E-mail" for="email"/>
+			<h:panelGroup>
+				<h:inputText size="50" id="email" value="#{cadastroUsuarioBean.email}"/>
+				<h:message for="email" errorStyle="color:red" warnStyle="color:orange" infoClass="color:green" />
+			</h:panelGroup>
+			
+			
+			<h:outputLabel value="Senha"  for="senha"/>
+			<h:panelGroup>
+				<h:inputSecret size="20" id="senha" value="#{cadastroUsuarioBean.senha}"/>
+				<h:message for="senha" errorStyle="color:red" warnStyle="color:orange" infoClass="color:green" />
+			</h:panelGroup>			
+			
+			<h:outputLabel/>
+			<h:commandButton value="Cadastrar" action="#{cadastroUsuarioBean.cadastrar}"/>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
